@@ -1,0 +1,11 @@
+html,
+body{
+    height: 80%;
+    width: 80%;
+}
+
+.textbox{
+    text-align: left;
+    font-size: 100px;
+    color:red;
+}

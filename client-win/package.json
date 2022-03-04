@@ -1,0 +1,14 @@
+{
+  "name": "teacher_cui_s_greetings",
+  "version": "1.0.0",
+  "description": "theacher cui's greetings",
+  "main": "main.js",
+  "scripts": {
+    "test": "electron ."
+  },
+  "author": "BoilingBlues",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^17.1.0"
+  }
+}
