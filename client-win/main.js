@@ -1,4 +1,4 @@
-const { nativeImage, Tray, Menu } = require('electron');
+const { nativeImage, Tray, Menu, net } = require('electron');
 const path = require('path');
 const electron = require('electron');
 const app = electron.app;
@@ -17,9 +17,9 @@ app.on('ready', function () {
 
 function createMainWindow() {
     mainWindow = new BrowserWindow({
-        width: 1920,
-        height: 1080,
-        transparent: true,
+        //width: 1920,
+        //height: 1080,
+        //transparent: true,
         frame: false,
         resizable: false,
         alwaysOnTop: true,
@@ -31,7 +31,7 @@ function createMainWindow() {
 
     mainWindow.setAlwaysOnTop(true, 'pop-up-menu');
 
-    mainWindow.maximize();
+    //mainWindow.maximize();
     mainWindow.setIgnoreMouseEvents(true);
     mainWindow.loadURL(`file://${__dirname}/app/index.html`);
 }
