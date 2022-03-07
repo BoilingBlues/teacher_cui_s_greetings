@@ -1,5 +1,6 @@
-from urllib import request
-from flask import Flask
+
+from flask import Flask, request
+from flask_cors import *
 from gevent import pywsgi
 
 app = Flask(__name__)
@@ -9,17 +10,18 @@ messages = "Teacher Cui's greetings"
 location = 0
 
 
-@app.route("/", methods=['POST'])
+@app.route("/")
 def post():
-    global message
+    global messages
     global location
-    message = request.json['message']
-    location = request.json['location']
-    return
+    messages = request.args.get('message')
+    location = request.args.get('location')
+    return "ok"
 
 
 @app.route("/get")
 def get():
+    print(messages)
     return {
         "messages": messages,
         "location": location
@@ -27,6 +29,8 @@ def get():
 
 
 if __name__ == '__main__':
+    CORS(app, supports_credentials=True)
     app.config['ENV'] = "production"
-    server = pywsgi.WSGIServer(('0.0.0.0', 8080), app)
-    server.serve_forever()
+    # server = pywsgi.WSGIServer(('0.0.0.0', 8080), app)
+    # server.serve_forever()
+    app.run(host="0.0.0.0", port=8080)

@@ -9,11 +9,12 @@ function update() {
     httpRequest.onreadystatechange = function () {
         if (httpRequest.readyState == 4 && httpRequest.status == 200) {
             var json = httpRequest.responseText;
+            var obj = JSON.parse(json);
+            textbox.innerHTML = obj.messages;
 
         }
     };
 
-    textbox.innerHTML = ipAddr;
 }
 
 window.onload = function () {
