@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link href="static/css.css" rel="stylesheet">
     <script src="static/config.js"></script>
     <script src="static/request.js"></script>
 </head>
@@ -9,14 +10,16 @@
 <body>
     <div align="center">
         <p>输入内容</p>
-        <p><input id="textbox" type="text" value=""></p>
-        <p>位置：
-            <input type="radio" value="0" name="location" />左上
-            <input type="radio" value="1" name="location" />左下
-            <input type="radio" value="2" name="location" />右下
-            <input type="radio" value="3" name="location" />右上
-            <input type="radio" value="4" name="location" />居中
+        <p><input class="messagebox" id="textbox" type="text" value=""></p>
+        <p>水平位置：
+            <input type="radio" value="0" name="location-level" />左
+            <input type="radio" value="1" name="location-level" />右
         </p>
+        <p>垂直位置：
+            <input type="radio" value="0" name="location-vertical" />上
+            <input type="radio" value="1" name="location-vertical" />下
+        </p>
+        <p>字大小：<input class="fontbox" id="fontbox" type="text" value="100"> </p>
         <button onclick="putText()">上传</button>
     </div>
 </body>

@@ -29,8 +29,8 @@ function createMainWindow() {
         focusable: false
     });
 
-    mainWindow.setAlwaysOnTop(true, 'pop-up-menu');
-
+    mainWindow.setAlwaysOnTop(true, 'normal', 100);
+    mainWindow.isAlwaysOnTop()
     mainWindow.maximize();
     mainWindow.setIgnoreMouseEvents(true);
     mainWindow.loadURL(`file://${__dirname}/app/index.html`);
